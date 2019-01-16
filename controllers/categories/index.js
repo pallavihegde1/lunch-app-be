@@ -8,7 +8,7 @@ router.get('/', CategoriesController.fetchAll);
 // router.get('/:id', CategoriesController.fetchOne);
 
 // // Create Role
-// router.post('/', hasValidParams, CategoriesController.create);
+router.post('/', CategoriesController.create);
 //
 // // Update Role
 // router.put('/:id', hasValidParams, CategoriesController.update);

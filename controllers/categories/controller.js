@@ -14,11 +14,12 @@ const fetchAll = async (req, res, next) => {
 
 const create = async (req, res, next) => {
   try {
-    let role = new Role({ name, desc });
-    role = await role.save();
-    res.status(201).send('Role created successfully', role);
+    const {name, desc} = req.body
+    let category = new Category({ name, desc });
+    category = await category.save();
+    return res.status(200).json({success: true, message: 'Category created successfully', data: category});
   } catch (error) {
-    res.status(500).send(error.message, 'Something went wrong. Please try again', null);
+    res.status(500).json({success: false, systemMessage: error.message, userMessage: 'Something went wrong. Please try again', data: null});
   }
 };
 

@@ -1,7 +1,7 @@
 const {mongoose, Schema} = require('../config/db');
 
 const categorySchema = new Schema({
-  name: {type: String, required: true, unique: true, index: true},
+  name: {type: String, unique: true, index: true},
   desc: String
 })
 
