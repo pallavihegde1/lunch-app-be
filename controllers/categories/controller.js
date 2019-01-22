@@ -4,8 +4,8 @@ const Category = require('../../models/category')
 const fetchAll = async (req, res, next) => {
   try {
     // Authorize request
-    const categories = await Category.find({});
-    res.status(200).json({categories});
+    const categories = await Category.find({name: 'veg'})
+    return res.status(200).json({success: true, data: categories});
   } catch (error) {
     console.error({error})
     res.status(500).json({error});

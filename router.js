@@ -4,9 +4,10 @@ const router = express.Router();
 
 // Controller Routes
 const categoryRoutes = require('./controllers/categories');
+const menuItemRoutes = require('./controllers/menuItems');
 
-// Category Routes
 router.use('/categories', categoryRoutes);
+router.use('/MenuItems', menuItemRoutes)
 
 // If no routes matches
 router.use((req, res, next) => {
