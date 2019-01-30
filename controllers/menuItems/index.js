@@ -3,7 +3,10 @@ const MenuItemsController = require('./controller');
 
 // Fetch all Role
 router.get('/', MenuItemsController.fetchAll);
-router.get('/deleteAll', MenuItemsController.deleteAll);
+
+router.post('/deleteAll', MenuItemsController.deleteAll);
+
+
 // // Fetch one Role
 // router.get('/:id', MenuItemsController.fetchOne);
 

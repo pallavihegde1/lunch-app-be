@@ -7,10 +7,11 @@ const categoryRoutes = require('./controllers/categories');
 const menuItemRoutes = require('./controllers/menuItems');
 
 router.use('/categories', categoryRoutes);
-router.use('/MenuItems', menuItemRoutes)
+router.use('/menuItems', menuItemRoutes)
 
 // If no routes matches
 router.use((req, res, next) => {
+  debugger
   if (!req.route) return next({ message: 'No route matched', status: 404 });
   next();
 });
